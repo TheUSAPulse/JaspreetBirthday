@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .birthdayimg {
+            background-image: url('https://cdn.pixabay.com/photo/2018/02/23/21/29/roses-frame-3176667_960_720.jpg');
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            color: red;
+            font-size: 35px;
+        }
+
+        .topleft {
+            position: absolute;
+            color: yellow;
+            top: 0;
+            left: 12px;
+        }
+
+        .bottomleft {
+            position: absolute;
+            color: red;
+            bottom: 0;
+            left: 18px;
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        hr {
+            margin: auto;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="birthdayimg">
+                <div class="middle">
+            <h1 style="font-size: 50px;color: red;">Ready for the Surprise?</h1>
+            <hr>
+            <p id="Sandy" style="font-size: 50px; color: rgb(83, 219, 83);"></p>
+        </div>
+        <div class="bottomleft">
+            <p style="font-size: 20px;">Created by Sandy Sir</p>
+        </div>
+    </div>
+
+    <script>
+        var countDownDate = new Date("Jan 6, 2024 00:00:00").getTime();
+        var countdownfunction = setInterval(function () {
+
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("Sandy").innerHTML = days + "D " + hours + "H " + minutes + "M " + seconds + "S";
+
+            if (distance < 5000) {
+                clearInterval(countdownfunction);
+                document.getElementById("Sandy").innerHTML = "HAPPY BIRTHDAY Jaspreet Ma'am";
+                window.location = "https://sandeeportfolio2206.netlify.app/";
+            }
+
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
